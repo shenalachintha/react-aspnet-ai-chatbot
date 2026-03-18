@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Base tweaks */
+@layer base {
+  body {
+    @apply bg-slate-950 text-slate-100 antialiased;
+  }
+}
+
+/* Scrollbar styling for chat window */
+@layer utilities {
+  .chat-window::-webkit-scrollbar {
+    width: 8px;
+  }
+  .chat-window::-webkit-scrollbar-thumb {
+    @apply bg-slate-700 rounded-full;
+  }
+}
