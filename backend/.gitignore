@@ -1,0 +1,85 @@
+# =========================
+# Build folders
+# =========================
+bin/
+obj/
+out/
+
+# =========================
+# User-specific files
+# =========================
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# =========================
+# Visual Studio files
+# =========================
+.vs/
+.vscode/
+
+# =========================
+# Logs
+# =========================
+*.log
+
+# =========================
+# OS files
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# ASP.NET Core secrets
+# =========================
+appsettings.Development.json
+appsettings.Local.json
+
+# =========================
+# Entity Framework
+# =========================
+Migrations/*.Designer.cs
+
+# (Optional: ignore migrations if not needed)
+# Migrations/
+
+# =========================
+# Node modules (if frontend inside project)
+# =========================
+node_modules/
+
+# =========================
+# Publish output
+# =========================
+publish/
+wwwroot/dist/
+
+# =========================
+# Rider / ReSharper
+# =========================
+_ReSharper*/
+*.DotSettings.user
+
+# =========================
+# NuGet
+# =========================
+*.nupkg
+.nuget/packages/
+
+# =========================
+# Coverage / Test results
+# =========================
+TestResults/
+coverage/
+
+# =========================
+# Docker
+# =========================
+docker-compose.override.yml
+
+# =========================
+# Environment variables
+# =========================
+.env
+.env.*
