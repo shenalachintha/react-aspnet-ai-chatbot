@@ -17,6 +17,12 @@ builder.Services.AddControllers();
 
 var app = builder.Build();
 
+// Show detailed errors in Development
+if (app.Environment.IsDevelopment())
+{
+    app.UseDeveloperExceptionPage();
+}
+
 app.UseCors();
 app.MapControllers();
 

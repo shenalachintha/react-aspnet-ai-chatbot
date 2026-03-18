@@ -1,85 +1,41 @@
-# =========================
-# Build folders
-# =========================
+# Build artifacts
 bin/
 obj/
 out/
 
-# =========================
-# User-specific files
-# =========================
-*.user
-*.suo
-*.userosscache
-*.sln.docstates
-
-# =========================
-# Visual Studio files
-# =========================
+# Visual Studio / Editor
 .vs/
 .vscode/
+*.suo
+*.user
+*.userosscache
+*.DotSettings.user
 
-# =========================
-# Logs
-# =========================
-*.log
-
-# =========================
-# OS files
-# =========================
-.DS_Store
-Thumbs.db
-
-# =========================
-# ASP.NET Core secrets
-# =========================
+# Local app settings / secrets
 appsettings.Development.json
 appsettings.Local.json
+secrets.json
+.env
+.env.*
 
-# =========================
-# Entity Framework
-# =========================
-Migrations/*.Designer.cs
-
-# (Optional: ignore migrations if not needed)
-# Migrations/
-
-# =========================
-# Node modules (if frontend inside project)
-# =========================
-node_modules/
-
-# =========================
-# Publish output
-# =========================
+# Publish / publish output
 publish/
 wwwroot/dist/
 
-# =========================
-# Rider / ReSharper
-# =========================
-_ReSharper*/
-*.DotSettings.user
+# Node (if frontend present)
+node_modules/
 
-# =========================
-# NuGet
-# =========================
+# NuGet / packages
 *.nupkg
 .nuget/packages/
 
-# =========================
-# Coverage / Test results
-# =========================
+# Tests / coverage
 TestResults/
 coverage/
 
-# =========================
-# Docker
-# =========================
-docker-compose.override.yml
+# Logs
+*.log
 
-# =========================
-# Environment variables
-# =========================
-.env
-.env.*
+# OS
+.DS_Store
+Thumbs.db

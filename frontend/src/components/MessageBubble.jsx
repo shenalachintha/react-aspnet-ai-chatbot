@@ -1,39 +1,35 @@
-import React, { useState } from "react";
+import React from "react";
 
-export default function InputBox({ onSend, disabled }) {
-  const [text, setText] = useState("");
+const roleStyles = {
+  user: {
+    bg: "bg-emerald-500/10 border-emerald-500/30",
+    text: "text-emerald-50",
+    badge: "bg-emerald-500 text-emerald-950",
+  },
+  assistant: {
+    bg: "bg-slate-800/80 border-slate-700",
+    text: "text-slate-100",
+    badge: "bg-slate-700 text-slate-200",
+  },
+};
 
-  const submit = (e) => {
-    e.preventDefault();
-    onSend(text);
-    setText("");
-  };
-
+export default function MessageBubble({ role, content }) {
+  const style = role === "user" ? roleStyles.user : roleStyles.assistant;
   return (
-    <form
-      onSubmit={submit}
-      className="flex flex-col gap-3 sm:flex-row sm:items-center"
+    <div
+      className={`w-full rounded-xl border ${style.bg} ${style.text} shadow-lg shadow-slate-950/50`}
     >
-      <div className="relative flex-1">
-        <textarea
-          rows={2}
-          className="w-full resize-none rounded-xl border border-slate-700 bg-slate-900/70 px-4 py-3 text-slate-100 shadow-inner shadow-slate-950/60 outline-none ring-1 ring-transparent transition focus:border-emerald-500/70 focus:ring-emerald-500/40 disabled:opacity-60"
-          value={text}
-          onChange={(e) => setText(e.target.value)}
-          placeholder="Ask anything…"
-          disabled={disabled}
-        />
-        <div className="pointer-events-none absolute bottom-2 right-3 text-[11px] uppercase tracking-[0.2em] text-slate-500">
-          Enter to send
-        </div>
+      <div className="flex items-center gap-2 border-b border-white/5 px-4 py-2 text-xs uppercase tracking-[0.25em] text-slate-400">
+        <span
+          className={`rounded-full px-2 py-1 text-[10px] font-semibold ${style.badge}`}
+        >
+          {role === "user" ? "You" : "Assistant"}
+        </span>
+        <span className="text-[11px]">Conversation</span>
       </div>
-      <button
-        type="submit"
-        disabled={disabled}
-        className="inline-flex items-center justify-center rounded-xl bg-emerald-500 px-5 py-3 text-sm font-semibold text-emerald-950 shadow-lg shadow-emerald-500/30 transition hover:-translate-y-[1px] hover:shadow-emerald-500/40 disabled:cursor-not-allowed disabled:opacity-60"
-      >
-        Send
-      </button>
-    </form>
+      <div className="px-4 py-3 text-base leading-relaxed whitespace-pre-wrap">
+        {content}
+      </div>
+    </div>
   );
 }
